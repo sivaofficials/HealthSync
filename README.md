@@ -64,26 +64,37 @@ app.get("/posts/:topic", (req, res) => {
   posts.forEach((post) => {
     if (test === _.lowerCase(post.fname)) {
       res.render("content", {
-        title: post.fname,
-        twitter: post.uname,
-        instagram: post.instagram,
-        city: post.city,
-        rel: post.rel,
-        Profile: post.Profile,
-        gender: post.gender,
-        phone: post.phone,
-        email: post.email,
-        address: post.address,
-        status: post.status,
-        facebook: post.facebook,
-        descretion: post.descretion,
-        bg: bg,
-        Profile: post.filename,
-        album: kimgs,
+        title: post.fname
       });
     }
   });
 ```
+## multer
+```
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    return cb(null, "public/uploads");
+  },
+  filename: function (req, file, cb) {
+    var filename = file.originalname;
+    testok = filename;
 
+    return cb(null, filename);
+  },
+});
+const upload = multer({ storage });
+var port = 3000;
+let posts = [];
+var items = [];
+var gobal_topic = "";
+let i = 0;
+let pic = [
+  {
+    name: "siva",
+    imgs: ["img1", "img2"],
+  },
+];
+
+```
 
   
