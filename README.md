@@ -2,7 +2,8 @@
 
 ## index.js 
   The main file where the imports (requries) and routes deafult(express,body-parser,ejs,cookie-parser)
-  '''
+
+'''
   const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
